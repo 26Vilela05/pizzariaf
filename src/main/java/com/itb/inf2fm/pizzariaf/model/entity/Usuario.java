@@ -7,6 +7,7 @@ public class Usuario {
     private String cpf;
     private String email;
     private String senha;
+    private String tipoUsuario;
     private String sexo;
     private String logradouro;
     private String cep;
@@ -29,6 +30,14 @@ public class Usuario {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 
     public String getCpf() {
