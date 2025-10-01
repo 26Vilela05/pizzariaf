@@ -90,7 +90,12 @@ public class ProdutoController {
     public ResponseEntity<Object> deleteProduto(@PathVariable String id) {
         try {
             produtoService.delete(Long.parseLong(id));
-            return ResponseEntity.ok().body("Produto com o id " + id + " excluído com sucesso!");
+            return ResponseEntity.ok().body(
+                    Map.of(
+                            "status", 200,
+                            "message","Produto excluído com sucesso: " + id
+                    )
+            );
         } catch (NumberFormatException e ) {
             return ResponseEntity.badRequest().body (
                     Map.of(
